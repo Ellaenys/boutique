@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les catégories{% endblock %}
+
+{% block body %}
+    <div class="container d-flex flex-column mt-5">
+
+        <h1>Ajouter une catégorie :</h1>
+
+        {{ form_start(form) }}
+            {{ form_errors(form) }}
+
+            {{ form_widget(form.name, {'attr': {'placeholder': 'Nom de catégorie'}}) }}
+            {{ form_row(form.submit, {'attr': {'class': 'btn-outline-dark mt-3'}})
+            }}
+
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+

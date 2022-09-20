@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bonjour la nouvelle marque{% endblock %}
+
+{% block body %}
+    <div class="container d-flex flex-column mt-5">
+
+        <h1>Ajouter une marque 🔥</h1>
+
+        {{ form_start(form) }}
+            {{ form_errors(form) }}
+                <div class="container d-flex flex-column align-items-center">
+                        {{ form_widget(form.name, {'attr': {'class': 'w-50 my-3', 'placeholder': 'Nom de la marque'}}) }}
+                        {{ form_widget(form.address, {'attr': {'class': 'w-50 my-3','placeholder': 'L\'adresse de la marque'}}) }}
+                        {{ form_widget(form.createdAt, {'attr': {'class': 'w-50 my-3','placeholder': 'La date de création'}}) }}
+                        {{ form_row(form.submit, {'attr': {'class': 'btn-outline-dark mt-3'}}) }}
+                </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+
